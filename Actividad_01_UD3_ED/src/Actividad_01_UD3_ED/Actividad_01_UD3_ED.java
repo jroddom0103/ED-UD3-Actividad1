@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Para cambiar este encabezado de licencia, elige License Headers en Project Properties.
+ * Para cambiar este archivo de plantilla, elige Tools | Templates
+ * y abre la plantilla en el editor.
  */
 package Actividad_01_UD3_ED;
 
@@ -11,22 +11,36 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- *
- * @author ana
+ * Clase que muestra información de archivo de texto.
+ * @author jroddom0103
+ * @version 3.0
  */
 public class Actividad_01_UD3_ED 
 {
+    //Almacenador de búfers.
     private static byte[] búfer = new byte[1000];
+    //Nombre del archivo.
     private static String nombreArchivo = "fichero.dat";
+    //Corriente de entrada.
     private static FileInputStream corrienteEntrada = null;
+    //Búfer de entrada.
     private static BufferedInputStream búferEntrada = null;
 
+    /**
+     * Inicializa el archivo
+     * @throws FileNotFoundException 
+     */
     public static void inicializateFiles() throws FileNotFoundException
     {
         corrienteEntrada = new FileInputStream(nombreArchivo);
         búferEntrada = new BufferedInputStream(corrienteEntrada);
     }
     
+    /**
+     * Muestra el archivo de texto
+     * @return Muestra el total de lecturas
+     * @throws IOException 
+     */
     public static int showFileText() throws IOException
     {
         int total = 0;
@@ -41,6 +55,7 @@ public class Actividad_01_UD3_ED
     }
     
     /**
+     * Método principal de la clase
      * @param args the command line arguments
      */
     public static void main(String[] args) 
